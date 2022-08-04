@@ -4,10 +4,6 @@ body {
     background-size: cover;
 }
 
-p {
-    text-align: center;
-}
-
 table, th, td {
     border: 2px solid;
     text-align: center;
@@ -16,6 +12,6 @@ table, th, td {
     margin-top: 100%;
   }
 
- div.responsive_table{
+ .responsive_table{
     overflow-x: auto;
 }
