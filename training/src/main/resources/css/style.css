@@ -12,6 +12,11 @@ table, th, td {
     margin-top: 10%;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+}
+
 .gallery {
     margin: auto auto;
     display: grid;
