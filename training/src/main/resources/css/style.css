@@ -1,7 +1,8 @@
 body {
     background-image: url("../images/sea.jpg");
-    background-repeat: no-repeat;
+    background-attachment: fixed ;
     background-size: cover;
+    margin: 0;
 }
 
 table, th, td {
@@ -9,7 +10,23 @@ table, th, td {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 12%;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.div_header {
+    margin-top: 4%;
+}
+
+.form_label {
+    margin-top: 2%;
+    margin-left: 25%;
+    padding: 10px 5px 5px 0;
+    display: block;
 }
 
 .center {
@@ -18,7 +35,9 @@ table, th, td {
 }
 
 .gallery {
-    margin: auto auto;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     place-items: center;
     grid-auto-flow: row;
@@ -40,6 +59,52 @@ table, th, td {
     height: 160px;
 }
 
+.nav {
+    width: 100%;
+    top: 0;
+    position: absolute;
+    float: left;
+    background-color: #0080ff;
+    font-size: 15px;
+ }
+ 
+ .nav_link {
+    display: inline-block;
+    width: 100px;
+    height: 55px;
+    color: White;
+    text-align: center;
+    line-height: 55px;
+    text-decoration: none;
+ }
+
+ .nav_link:hover {
+    background-color: black;
+ }
+
 .responsive_table {
     overflow-x: auto;
+}
+
+.style_textarea {
+    width: 40%;
+    padding: 7px;
+    margin-left: 25%;
+    border: 1px solid coral;
+    border-radius: 4px;
+}
+
+.style_textarea:invalid {
+    color: red;
+}
+
+.submit_button {
+  background-color: lightblue;
+  color: white;
+  padding: 10px 15px;
+  margin: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 59%;
 }
