@@ -1,7 +1,7 @@
 function check_data() {
-    let password = document.getElementById("password");
     let email = document.getElementById("email");
     let name = document.getElementById("name");
+    let password = document.getElementById("password");
 
     if (!name.validity.valid) {
         alert("Invalid name");
