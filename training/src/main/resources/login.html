@@ -9,27 +9,28 @@
 
         <link rel="stylesheet" href="css/style.css">
     </head>
-<body>
-    <nav class="nav">
-        <a href="index.html" class="nav_link">Home</a>
-
-        <a href="blogs/blog_post_1.html" class="nav_link">Blog Post</a>
-    </nav>
     
-    <form class="container">     
-        <label for="name" class="form_label"><b>Insert name:</b></label>
+    <body>
+        <nav class="nav">
+            <a href="index.html" class="nav_link">Home</a>
+
+            <a href="blogs/blog_post_1.html" class="nav_link">Blog Post</a>
+        </nav>
         
-        <input type="text" id="name" required class="style_textarea" minlength="4"/>
-        
-        <label for="email" class="form_label"><b>Insert email:</b></label>
-        
-        <input type="email" placeholder="Enter Email" id="email" required class="style_textarea"/>
-        
-        <label for="password" class="form_label"><b>Insert password:</b></label>
-        
-        <input type="password" placeholder="Enter password" id="password" required class="style_textarea" minlength="6"/>
-        
-        <input type="submit" onclick="check_data()" class="submit_button"/>
-    </form>
-</body>
+        <form class="container">     
+            <label for="name" class="form_label"><b>Insert name:</b></label>
+            
+            <input type="text" id="name" required class="style_textarea" minlength="2"/>
+            
+            <label for="email" class="form_label"><b>Insert email:</b></label>
+            
+            <input type="email" placeholder="Enter Email" id="email" required class="style_textarea"/>
+            
+            <label for="password" class="form_label"><b>Insert password:</b></label>
+            
+            <input type="password" placeholder="Enter password" id="password" required class="style_textarea" minlength="6"/>
+            
+            <input type="submit" onclick="check_data()" class="submit_button"/>
+        </form>
+    </body>
 </html>
