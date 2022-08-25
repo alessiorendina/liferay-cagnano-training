@@ -13,6 +13,37 @@ table, th, td {
     margin-top: 12%;
 }
 
+#date {
+    text-align: center;
+    font-size: 300%;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.button_style {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    position: fixed;
+    font-size: 60px;
+    top: 25%;
+    margin-left: 41%;
+    box-shadow: 0 9px #999;
+    border-radius: 10px;
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+.button_style:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.button_style:hover{
+    background-color: #66ccff;
+}
+
 .container {
     border-radius: 5px;
     padding: 30px;
@@ -20,6 +51,7 @@ table, th, td {
 
 .div_header {
     margin-top: 4%;
+    text-align: center;
 }
 
 .form_label {

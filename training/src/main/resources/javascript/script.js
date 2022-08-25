@@ -16,3 +16,9 @@ function check_data() {
         alert("Registration completed!");
     }
 }
+
+function show_date() {
+    const actual_date = new Date();
+
+    alert(actual_date.toString());
+}
