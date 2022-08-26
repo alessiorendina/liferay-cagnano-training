@@ -13,9 +13,99 @@ table, th, td {
     margin-top: 12%;
 }
 
+.answered {
+    color: black;
+    -webkit-text-stroke: thin;
+}
+
+.button_wrapper {
+    margin-top: 100px;
+    position: relative;
+}
+
+.button_wrapper > button {
+    background-color: lightblue;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px #000;
+    color: white;
+    font-size: 200%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button_wrapper > button[disabled] {
+    opacity: 0.5;
+}
+
+.button_wrapper > button:active {
+    box-shadow: 2px 3px 3px #000;
+    transform: translate(-50%, -48%);
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.card > img.face {
+    height: 120px;
+}
+
+.card > img.glasses {
+    display: none;
+    height: 10px;
+}
+
+.card > img.hat {
+    display: none;
+    height: 10px;
+}
+
+.card > img.mustache {
+    display: none;
+    height: 10px;
+}
+
+.card[glasses] > img.glasses {
+    display: inherit;
+    height: 65px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+}
+
+.card[hat] > img.hat {
+    display: inherit;
+    height: 50px;
+    left: 30%;
+    position: absolute;
+    top: -10%;
+    width: 60px;
+}
+
+.card[mustache] > img.mustache {
+    display: inherit;
+    height: 30px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-55%, -65%);
+    width: 60px;
+}
+
+.card.selectable {
+    cursor: pointer;
+}
+
 .container {
     border-radius: 5px;
     padding: 30px;
+}
+
+.discarded {
+    opacity: 0.3;
 }
 
 .div_header {
@@ -84,6 +174,16 @@ table, th, td {
 
 .responsive_table {
     overflow-x: auto;
+}
+
+.score {
+    display: inline-block;
+}
+
+.score_container {
+    bottom: 0%;
+    position: fixed;
+    right: 0%;
 }
 
 .style_textarea {
