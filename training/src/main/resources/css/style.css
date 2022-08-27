@@ -49,6 +49,11 @@ table, th, td {
     background-color: transparent;
 }
 
+.card > img.card_back {
+    height: 128px;
+    width: 130px;
+}
+
 .card > img.face {
     height: 120px;
 }
@@ -61,6 +66,19 @@ table, th, td {
 .card > img.hat {
     display: none;
     height: 10px;
+}
+
+.card > img.memory_card {
+    height: 128px;
+    width: 130px;
+}
+
+.card > img.memory_card[open] {
+    display: inherit!important;
+}
+
+.card > img.memory_card[close] {
+    display: none!important;
 }
 
 .card > img.mustache {
