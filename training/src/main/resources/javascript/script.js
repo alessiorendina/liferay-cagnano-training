@@ -1,10 +1,31 @@
 var characters = [];
+var level = 48;
+var memoryCards = [];
 var score = 0;
 
 const boysFolder = "images/faces/boys/";
 const girlsFolder = "images/faces/girls/";
+const memoryFolder = "images/memory/";
 
 const extension = ".png";
+
+$(document).ready(function() {    
+    var i = "1";
+
+    $(function memoryCardsImageLoop() {
+        memoryCards.push(memoryFolder + "card-" + i + extension);
+        memoryCards.push(memoryFolder + "card-" + i + extension);
+        
+        if (i == 24) {
+            console.log('memory cards loaded');
+        }
+        else {
+            i++;
+
+            memoryCardsImageLoop();
+        };
+    });   
+});
 
 $(document).ready(function() {
     var i = "1";
@@ -12,10 +33,10 @@ $(document).ready(function() {
     $(function boysImageLoop() {
         characters.push(boysFolder + "boy-" + i + extension);
         
-        if (i == 9){
+        if (i == 9) {
             console.log('boys loaded');
         }
-        else{
+        else {
             i++;
 
             boysImageLoop();
@@ -29,10 +50,10 @@ $(document).ready(function() {
     $(function girlsImageLoop() {
         characters.push(girlsFolder + "girl-" + i + extension);
         
-        if (i == 11){
+        if (i == 11) {
             console.log('girls loaded');
         }
-        else{
+        else {
             i++;
 
             girlsImageLoop();
@@ -393,7 +414,67 @@ function selectCard(element) {
             alert("Nooo! Purtroppo hai sbagliato");
         }
     }
-};
+}
+
+function selectMemoryCard(element) {
+    if (element.hasAttribute("open")) {
+        return;
+    }
+
+    let openMemoryCards = document.querySelectorAll(".memory_card:not([completed]).memory_card[open]");
+
+    if (openMemoryCards.length > 1) {
+        for (let i = 0; i < openMemoryCards.length; i++) {
+            openMemoryCards[i].removeAttribute("open");
+            openMemoryCards[i].setAttribute("close", "");
+
+            let cardBack = openMemoryCards[i].parentElement.querySelector(".card_back");
+
+            cardBack.removeAttribute("close");
+        }
+    }
+
+    element.setAttribute("close", "");
+
+    let image = element.parentElement.querySelector(".memory_card:not(.card_back)");
+
+    image.removeAttribute("close");
+    image.setAttribute("open", "");
+
+    openMemoryCards = document.querySelectorAll(".memory_card:not([completed]).memory_card[open]");
+
+    if (openMemoryCards.length > 1) {
+        let attributes1 = openMemoryCards[0].getAttributeNames();
+        let attributes2 = openMemoryCards[1].getAttributeNames();
+
+        var filteredAttributes1 = attributes1.filter(function(e) { return e !== "open" && e !== "class" && e !== "src"})
+        var filteredAttributes2 = attributes2.filter(function(e) { return e !== "open" && e !== "class" && e !== "src"})
+
+        if (((filteredAttributes1.length > 0) && (filteredAttributes2.length > 0)) &&
+                (filteredAttributes1[0] == filteredAttributes2[0])) {
+                    
+            openMemoryCards[0].setAttribute("completed", "");
+            openMemoryCards[1].setAttribute("completed", "");
+            
+            score = score + 100;
+
+            $("#scoreNumber").text(score);
+        }
+        else {
+            score = score -25;
+    
+            $("#scoreNumber").text(score);
+        }
+    }
+
+    let completedMemoryCards = document.querySelectorAll(".memory_card[completed]");
+
+    if (completedMemoryCards.length == level) {
+        $("#memoryPlayButton").attr("disabled", false);
+
+        $("#memoryLevel").attr("disabled", false);
+    }
+}
 
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
@@ -408,4 +489,63 @@ function shuffle(array) {
     }
 
     return array;
+}
+
+function startMemory() {
+    document.getElementById("memoryCardsContainer").innerHTML = "";
+
+    level = document.getElementById("memoryLevel").value;
+
+    let randomizedMemoryCards = memoryCards;
+
+    if (level == "24") {
+        randomizedMemoryCards = randomizedMemoryCards.filter(function(e) {
+            let number = e.match(/\d/g).join("");
+            return number < 13;
+        });
+    }
+    else if (level == "36") {
+        randomizedMemoryCards = randomizedMemoryCards.filter(function(e) {
+            let number = e.match(/\d/g).join("");
+            return number < 19;
+        });
+    }
+
+    randomizedMemoryCards = shuffle(randomizedMemoryCards);
+
+    let htmlString = "";
+    let index = 0;
+
+    for (let i = 0; i < randomizedMemoryCards.length; i++) {
+        if (index == 12) {
+            index = 0;
+        }
+
+        index++;
+
+        if (index == 1) {
+            htmlString = htmlString.concat("<div class=\"row pt-2\">");
+        }
+
+        let imagePath = randomizedMemoryCards[i];
+
+        let attributes = imagePath.match(/\d/g).join("");
+
+        htmlString = htmlString.concat(
+            "<div class=\"card col-1\">",
+            "<img class=\"memory_card\" src=\"", imagePath, "\" close ", attributes, "/>",
+            "<img class=\"card_back memory_card\" onclick=\"selectMemoryCard(this)\" src=\"images/memory/card-back.png\" />",
+            "</div>"
+        );
+        
+        if ((index == 12) || (i == (randomizedMemoryCards.length -1))) {
+            htmlString = htmlString.concat("</div>");
+        }
+    }
+
+    $("#memoryCardsContainer").append(htmlString);
+
+    $("#memoryPlayButton").attr("disabled", true);
+
+    $("#memoryLevel").attr("disabled", true);
 }
