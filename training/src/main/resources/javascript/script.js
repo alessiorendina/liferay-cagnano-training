@@ -549,3 +549,8 @@ function startMemory() {
 
     $("#memoryLevel").attr("disabled", true);
 }
+
+function show_date(){
+    local_date = new Date();
+    alert(local_date.toString());
+}
