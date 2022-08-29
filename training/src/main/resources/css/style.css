@@ -13,6 +13,11 @@ table, th, td {
     margin-top: 12%;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+}
+
 .container {
     border-radius: 5px;
     padding: 30px;
@@ -27,11 +32,6 @@ table, th, td {
     margin-left: 25%;
     padding: 10px 5px 5px 0;
     display: block;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
 }
 
 .gallery {
@@ -51,6 +51,7 @@ table, th, td {
 }
 
 .gallery > a {
+    position: relative;
     scroll-snap-align: start;
 }
 
@@ -107,4 +108,13 @@ table, th, td {
   border-radius: 4px;
   cursor: pointer;
   margin-left: 59%;
+}
+
+.text {
+  color: white;
+  background-color:black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
