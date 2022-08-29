@@ -117,9 +117,45 @@ table, th, td {
     cursor: pointer;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+}
+
 .container {
     border-radius: 5px;
     padding: 30px;
+}
+
+.date_button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    position: relative;
+    font-size: 55px;
+    margin-top: 10%;
+    left: 42%;
+    box-shadow: 4px 4px #000;
+    border-radius: 10px;
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+.date_button:active {
+    box-shadow: 0 0 #000;
+    transform: translateY(3px);
+}
+
+.date_button:hover {
+    background-color: #66ccff;
+}
+
+
+.date_text {
+    text-align: center;
+    font-size: 300%;
+    font-weight: bold;
+    color: aliceblue;
 }
 
 .discarded {
@@ -128,18 +164,8 @@ table, th, td {
 
 .div_header {
     margin-top: 4%;
-}
-
-.form_label {
-    margin-top: 2%;
-    margin-left: 25%;
-    padding: 10px 5px 5px 0;
-    display: block;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
+    position: fixed;
+    left: 41%;
 }
 
 .gallery {
@@ -167,6 +193,36 @@ table, th, td {
     height: 160px;
 }
 
+.login_button {
+    background-color: lightblue;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 59%;
+}
+
+.login_label {
+    margin-top: 2%;
+    margin-left: 25%;
+    padding: 10px 5px 5px 0;
+    display: block;
+}
+
+.login_textarea {
+    width: 40%;
+    padding: 7px;
+    margin-left: 25%;
+    border: 1px solid coral;
+    border-radius: 4px;
+}
+
+.login_textarea:invalid {
+    color: red;
+}
+
 .nav {
     width: 100%;
     top: 0;
@@ -176,17 +232,18 @@ table, th, td {
     font-size: 15px;
  }
  
- .nav_link {
+.nav_link {
     display: inline-block;
-    width: 100px;
+    width: auto;
     height: 55px;
     color: White;
+    margin-left: 5px;
     text-align: center;
     line-height: 55px;
     text-decoration: none;
  }
 
- .nav_link:hover {
+.nav_link:hover {
     background-color: black;
  }
 
@@ -202,27 +259,4 @@ table, th, td {
     bottom: 0%;
     position: fixed;
     right: 0%;
-}
-
-.style_textarea {
-    width: 40%;
-    padding: 7px;
-    margin-left: 25%;
-    border: 1px solid coral;
-    border-radius: 4px;
-}
-
-.style_textarea:invalid {
-    color: red;
-}
-
-.submit_button {
-  background-color: lightblue;
-  color: white;
-  padding: 10px 15px;
-  margin: 8px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 59%;
 }

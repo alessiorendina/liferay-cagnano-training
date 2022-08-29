@@ -61,7 +61,7 @@ $(document).ready(function() {
     });   
 });
 
-function check_data() {
+function checkFormData() {
     let email = document.getElementById("email");
     let name = document.getElementById("name");
     let password = document.getElementById("password");
@@ -548,4 +548,10 @@ function startMemory() {
     $("#memoryPlayButton").attr("disabled", true);
 
     $("#memoryLevel").attr("disabled", true);
+}
+
+function showDate(){
+    local_date = new Date();
+
+    alert(local_date.toUTCString());
 }
