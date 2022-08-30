@@ -117,21 +117,17 @@ table, th, td {
     cursor: pointer;
 }
 
-#date {
+#date_text {
     text-align: center;
     font-size: 300%;
     font-weight: bold;
     color: aliceblue;
-    /*! position: inherit; */
-    /*! left: 43%; */
-    /*! top: ; */
 }
 
 .button_style {
     border: none;
     color: white;
     padding: 15px 32px;
-    /*! text-align: center; */
     position: relative;
     font-size: 55px;
     margin-top: 10%;
@@ -162,7 +158,6 @@ table, th, td {
 
 .div_header {
     margin-top: 4%;
-    /*! text-align: center; */
     position: fixed;
     left: 41%;
 }
@@ -215,9 +210,10 @@ table, th, td {
  
  .nav_link {
     display: inline-block;
-    width: 110px;
+    width: auto;
     height: 55px;
     color: White;
+    margin-left: 5px;
     text-align: center;
     line-height: 55px;
     text-decoration: none;

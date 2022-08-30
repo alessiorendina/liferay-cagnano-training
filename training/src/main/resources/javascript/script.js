@@ -550,7 +550,8 @@ function startMemory() {
     $("#memoryLevel").attr("disabled", true);
 }
 
-function show_date(){
+function showDate(){
     local_date = new Date();
-    alert(local_date.toString());
+
+    alert(local_date.toUTCString());
 }
