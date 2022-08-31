@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Liferay-Cagnano Date</title>
+        <title>Liferay-Cagnano DRag & Drop</title>
         
         <script type="text/javascript" src="javascript/script.js"></script> 
 
@@ -19,13 +19,15 @@
 
             <a href="memory.html" class="nav_link">Memory</a>
 
-            <a href="drag_drop.html" class="nav_link">Drag and drop</a>
+            <a href="date.html" class="nav_link">Date</a>
         </nav>
         
-        <div class="div_header">
-            <h1 class="date_text">What time is it?</h1>
+        <p>Drag the element between the two zones</p>
+
+        <div class="drag_and_drop_zone" ondrop="drop(event)" ondragover="event.preventDefault()">
+            <img src="images/hydro.jpg" draggable="true" id="draggable_image" ondragstart="drag(event)"/>
         </div>
 
-        <button onclick="showDate()" class="date_button">Click me!</button>
+        <div class="drag_and_drop_zone" ondrop="drop(event)" ondragover="event.preventDefault()"></div>
     </body>
 </html>

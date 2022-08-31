@@ -550,6 +550,16 @@ function startMemory() {
     $("#memoryLevel").attr("disabled", true);
 }
 
+function drag(event){
+    event.dataTransfer.setData("text", event.target.id);
+}
+
+function drop(event) {
+    let data = event.dataTransfer.getData("text");
+    
+    event.target.appendChild(document.getElementById(data));
+}
+
 function showDate(){
     local_date = new Date();
 

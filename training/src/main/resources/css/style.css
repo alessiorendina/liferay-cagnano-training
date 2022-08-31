@@ -150,7 +150,6 @@ table, th, td {
     background-color: #66ccff;
 }
 
-
 .date_text {
     text-align: center;
     font-size: 300%;
@@ -166,6 +165,24 @@ table, th, td {
     margin-top: 4%;
     position: fixed;
     left: 41%;
+}
+
+.drag_and_drop_zone {
+    border: 1px solid black;
+    cursor: grab;
+    display: flex;
+    float: left;
+    height: 200px;
+    justify-content: center;
+    left: 38%;
+    margin: 1%;
+    position: relative;
+    width: 200px;
+}
+
+.drag_and_drop_zone > img {
+    height: auto;
+    width: auto;
 }
 
 .gallery {
