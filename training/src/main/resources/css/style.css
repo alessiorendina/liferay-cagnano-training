@@ -13,6 +13,21 @@ table, th, td {
     margin-top: 12%;
 }
 
+#battleLog {
+    background-color: white;
+    height: 170px;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+#myPokemonsContainer > .pokemon_row {
+    padding-bottom: 150px;
+}
+
+#pokemonPlayButton[firstClick] {
+    margin-top: 140px;
+}
+
 .answered {
     color: black;
     -webkit-text-stroke: thin;
@@ -240,6 +255,13 @@ table, th, td {
     color: red;
 }
 
+.moveset {
+    bottom: -80%;
+    left: 9%;
+    position: absolute;
+    text-align: center;
+}
+
 .nav {
     width: 100%;
     top: 0;
@@ -264,6 +286,95 @@ table, th, td {
     background-color: black;
  }
 
+ .pokemon {
+    height: 225px;
+    width: 300px;
+}
+
+.pokemon_card[active] > img {
+    border: 5px solid #00ff00;
+}
+
+.pokemon_card[fainted] > img {
+    opacity: 0.3;
+}
+
+.pokemon_card[fainted] > .status[fainted] {
+    border: 2px solid black!important;
+    display: inherit!important;
+    height: 25px;
+    opacity: 1!important;
+    right: 4%;
+    top: 4%;
+    position: absolute;
+    width: 50px;
+}
+
+.pokemon_card[selectable] > img {
+    cursor: pointer;
+}
+
+.pokemon_card[status="burned"] > .status[burned] {
+    border: 2px solid black!important;
+    display: inherit!important;
+    height: 25px;
+    right: 4%;
+    top: 4%;
+    position: absolute;
+    width: 50px;
+}
+
+.pokemon_card[status="confused"] > .status[confused] {
+    border: 2px solid black!important;
+    display: inherit!important;
+    height: 25px;
+    right: 4%;
+    top: 4%;
+    position: absolute;
+    width: 50px;
+}
+
+.pokemon_card[status="paralyzed"] > .status[paralyzed] {
+    border: 2px solid black!important;
+    display: inherit!important;
+    height: 25px;
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    width: 50px;
+}
+
+.pokemon_card[status="poisoned"] > .status[poisoned] {
+    border: 2px solid black!important;
+    display: inherit!important;
+    height: 25px;
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    width: 50px;
+}
+
+.pokemon_card[status="sleeping"] > .status[sleeping] {
+    border: 2px solid black!important;
+    display: inherit!important;
+    height: 25px;
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    width: 50px;
+}
+
+.pokemon_hp {
+    bottom: 5px;
+    left: 20px;
+    position: absolute;
+    width: 290px;
+}
+
+.pokemon_hp > .progress-bar {
+    background-color: green;
+}
+
 .responsive_table {
     overflow-x: auto;
 }
@@ -276,4 +387,468 @@ table, th, td {
     bottom: 0%;
     position: fixed;
     right: 0%;
+}
+
+.stat {
+    height: 20px;
+    width: 20px;
+}
+
+.stats[negative] {
+    background-color: red;
+    left: 7%;
+    position: absolute;
+    top: 14%;
+}
+
+.stats[positive] {
+    background-color: lightgreen;
+    left: 7%;
+    position: absolute;
+    top: 2%;
+}
+
+.status {
+    display: none;
+}
+
+.w-0 {
+    background-color: red!important;
+    width: 0%;
+}
+
+.w-1 {
+    background-color: red!important;
+    width: 1%;
+}
+
+.w-2 {
+    background-color: red!important;
+    width: 2%;
+}
+
+.w-3 {
+    background-color: red!important;
+    width: 3%;
+}
+
+.w-4 {
+    background-color: red!important;
+    width: 4%;
+}
+
+.w-5 {
+    background-color: red!important;
+    width: 5%;
+}
+
+.w-6 {
+    background-color: red!important;
+    width: 6%;
+}
+
+.w-7 {
+    background-color: red!important;
+    width: 7%;
+}
+
+.w-8 {
+    background-color: red!important;
+    width: 8%;
+}
+
+.w-9 {
+    background-color: red!important;
+    width: 9%;
+}
+
+.w-10 {
+    background-color: red!important;
+    width: 10%;
+}
+
+.w-11 {
+    background-color: red!important;
+    width: 11%;
+}
+
+.w-12 {
+    background-color: red!important;
+    width: 12%;
+}
+
+.w-13 {
+    background-color: red!important;
+    width: 13%;
+}
+
+.w-14 {
+    background-color: red!important;
+    width: 14%;
+}
+
+.w-15 {
+    background-color: red!important;
+    width: 15%;
+}
+
+.w-16 {
+    background-color: red!important;
+    width: 16%;
+}
+
+.w-17 {
+    background-color: red!important;
+    width: 17%;
+}
+
+.w-18 {
+    background-color: red!important;
+    width: 18%;
+}
+
+.w-19 {
+    background-color: red!important;
+    width: 19%;
+}
+
+.w-20 {
+    background-color: red!important;
+    width: 20%;
+}
+
+.w-21 {
+    background-color: red!important;
+    width: 21%;
+}
+
+.w-22 {
+    background-color: red!important;
+    width: 22%;
+}
+
+.w-23 {
+    background-color: red!important;
+    width: 23%;
+}
+
+.w-24 {
+    background-color: red!important;
+    width: 24%;
+}
+
+.w-25 {
+    background-color: red!important;
+}
+
+.w-26 {
+    background-color: red!important;
+    width: 26%;
+}
+
+.w-27 {
+    background-color: red!important;
+    width: 27%;
+}
+
+.w-28 {
+    background-color: red!important;
+    width: 28%;
+}
+
+.w-29 {
+    background-color: red!important;
+    width: 29%;
+}
+
+.w-30 {
+    background-color: gold!important;
+    width: 30%;
+}
+
+.w-31 {
+    background-color: gold!important;
+    width: 31%;
+}
+
+.w-32 {
+    background-color: gold!important;
+    width: 32%;
+}
+
+.w-33 {
+    background-color: gold!important;
+    width: 33%;
+}
+
+.w-34 {
+    background-color: gold!important;
+    width: 34%;
+}
+
+.w-35 {
+    background-color: gold!important;
+    width: 35%;
+}
+
+.w-36 {
+    background-color: gold!important;
+    width: 36%;
+}
+
+.w-37 {
+    background-color: gold!important;
+    width: 37%;
+}
+
+.w-38 {
+    background-color: gold!important;
+    width: 38%;
+}
+
+.w-39 {
+    background-color: gold!important;
+    width: 39%;
+}
+
+.w-40 {
+    background-color: gold!important;
+    width: 40%;
+}
+
+.w-41 {
+    background-color: gold!important;
+    width: 41%;
+}
+
+.w-42 {
+    background-color: gold!important;
+    width: 42%;
+}
+
+.w-43 {
+    background-color: gold!important;
+    width: 43%;
+}
+
+.w-44 {
+    background-color: gold!important;
+    width: 44%;
+}
+
+.w-45 {
+    background-color: gold!important;
+    width: 45%;
+}
+
+.w-46 {
+    background-color: gold!important;
+    width: 46%;
+}
+
+.w-47 {
+    background-color: gold!important;
+    width: 47%;
+}
+
+.w-48 {
+    background-color: gold!important;
+    width: 48%;
+}
+
+.w-49 {
+    background-color: gold!important;
+    width: 49%;
+}
+
+.w-51 {
+    width: 51%;
+}
+
+.w-52 {
+    width: 52%;
+}
+
+.w-53 {
+    width: 53%;
+}
+
+.w-54 {
+    width: 54%;
+}
+
+.w-55 {
+    width: 55%;
+}
+
+.w-56 {
+    width: 56%;
+}
+
+.w-57 {
+    width: 57%;
+}
+
+.w-58 {
+    width: 58%;
+}
+
+.w-59 {
+    width: 59%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-61 {
+    width: 61%;
+}
+
+.w-62 {
+    width: 62%;
+}
+
+.w-63 {
+    width: 63%;
+}
+
+.w-64 {
+    width: 64%;
+}
+
+.w-65 {
+    width: 65%;
+}
+
+.w-66 {
+    width: 66%;
+}
+
+.w-67 {
+    width: 67%;
+}
+
+.w-68 {
+    width: 68%;
+}
+
+.w-69 {
+    width: 69%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-71 {
+    width: 71%;
+}
+
+.w-72 {
+    width: 72%;
+}
+
+.w-73 {
+    width: 73%;
+}
+
+.w-74 {
+    width: 74%;
+}
+
+.w-76 {
+    width: 76%;
+}
+
+.w-77 {
+    width: 77%;
+}
+
+.w-78 {
+    width: 78%;
+}
+
+.w-79 {
+    width: 79%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-81 {
+    width: 81%;
+}
+
+.w-82 {
+    width: 82%;
+}
+
+.w-83 {
+    width: 83%;
+}
+
+.w-84 {
+    width: 84%;
+}
+
+.w-85 {
+    width: 85%;
+}
+
+.w-86 {
+    width: 86%;
+}
+
+.w-87 {
+    width: 87%;
+}
+
+.w-88 {
+    width: 88%;
+}
+
+.w-89 {
+    width: 89%;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.w-91 {
+    width: 91%;
+}
+
+.w-92 {
+    width: 92%;
+}
+
+.w-93 {
+    width: 93%;
+}
+
+.w-94 {
+    width: 94%;
+}
+
+.w-95 {
+    width: 95%;
+}
+
+.w-96 {
+    width: 96%;
+}
+
+.w-97 {
+    width: 97%;
+}
+
+.w-98 {
+    width: 98%;
+}
+
+.w-99 {
+    width: 99%;
 }
