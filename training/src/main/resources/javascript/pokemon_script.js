@@ -5208,7 +5208,7 @@ function startPokemonBattle() {
             "<img class=\"status\" src=\"", pokemonsFolder, "/icons/paralyzed", extension, "\" paralyzed />",
             "<img class=\"status\" src=\"", pokemonsFolder, "/icons/poisoned", extension, "\" poisoned />",
             "<img class=\"status\" src=\"", pokemonsFolder, "/icons/sleeping", extension, "\" sleeping />",
-            "<div class=\"stats\" positive></div><div class=\"stats\" negative></div>",
+            "<div class=\"stats\" positive></div><div class=\"stats\" negative></div><div class=\"pokemon_name\">", myPokemons[i].name, "</div>",
             "<div class=\"pokemon_hp progress\">",
             "<div class=\"progress-bar w-100\" role=\"progressbar\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">",
             "</div></div><div class=\"moveset\">", getMovesetButtons(moveset, type), "</div></div>"
@@ -5240,7 +5240,7 @@ function startPokemonBattle() {
                 "<img class=\"status\" src=\"", pokemonsFolder, "/icons/paralyzed", extension, "\" paralyzed />",
                 "<img class=\"status\" src=\"", pokemonsFolder, "/icons/poisoned", extension, "\" poisoned />",
                 "<img class=\"status\" src=\"", pokemonsFolder, "/icons/sleeping", extension, "\" sleeping />",
-                "<div class=\"stats\" positive></div><div class=\"stats\" negative></div>",
+                "<div class=\"stats\" positive></div><div class=\"stats\" negative></div><div class=\"pokemon_name\">", opponentPokemons[i].name, "</div>",
                 "<div class=\"pokemon_hp progress\">",
                 "<div class=\"progress-bar w-100\" role=\"progressbar\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">",
                 "</div></div></div>"
@@ -5256,7 +5256,7 @@ function startPokemonBattle() {
                 "<img class=\"status\" src=\"", pokemonsFolder, "/icons/paralyzed", extension, "\" paralyzed />",
                 "<img class=\"status\" src=\"", pokemonsFolder, "/icons/poisoned", extension, "\" poisoned />",
                 "<img class=\"status\" src=\"", pokemonsFolder, "/icons/sleeping", extension, "\" sleeping />",
-                "<div class=\"stats\" positive></div><div class=\"stats\" negative></div>",
+                "<div class=\"stats\" positive></div><div class=\"stats\" negative></div><div class=\"pokemon_name\">", opponentPokemons[i].name, "</div>",
                 "<div class=\"pokemon_hp progress\">",
                 "<div class=\"progress-bar w-100\" role=\"progressbar\" aria-valuenow=\"100\" aria-valuemin=\"0\" aria-valuemax=\"100\">",
                 "</div></div></div>"

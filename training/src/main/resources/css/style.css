@@ -375,6 +375,13 @@ table, th, td {
     background-color: green;
 }
 
+.pokemon_name {
+    background-color: lightblue;
+    bottom: 10%;
+    left: 7%;
+    position: absolute;
+}
+
 .responsive_table {
     overflow-x: auto;
 }
