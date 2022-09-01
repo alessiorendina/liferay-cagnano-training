@@ -563,5 +563,5 @@ function drop(event) {
 function showDate(){
     local_date = new Date();
 
-    alert(local_date.toUTCString());
+    alert(local_date.toString());
 }

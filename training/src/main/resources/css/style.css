@@ -19,6 +19,20 @@ table, th, td {
     overflow-y: scroll;
     text-align: center;
 }
+/*
+#ghost{
+    background-color: #000;
+    background-image: url(../images/pacman/coin.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5px;
+}*/
+
+#maze {
+    position: fixed;
+    margin-top: 175px;
+    margin-left: 575px;
+}
 
 #myPokemonsContainer > .pokemon_row {
     padding-bottom: 150px;
@@ -137,6 +151,26 @@ table, th, td {
     justify-content: center;
 }
 
+.cherries {
+    background-image: url(../images/pacman/cherries.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;    
+}
+
+.coin {
+    background-color: #000;
+    background-image: url(../images/pacman/coin.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5px;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 30px;
+}
+
 .date_button {
     border: none;
     color: white;
@@ -175,6 +209,45 @@ table, th, td {
     margin-top: 4%;
     position: fixed;
     left: 41%;
+}
+
+.pacman_spawn {
+    background-color: #000;
+    background-image: url(../images/pacman/pacman.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+}
+
+.maze_brick{
+    background-color: blue;
+}
+
+.maze_left_top{
+    border-top-left-radius: 100%;
+}
+
+.maze_left_bottom{
+    border-bottom-left-radius: 100%;
+}
+
+.maze_right_top{
+    border-top-right-radius: 100%;
+}
+
+.maze_right_bottom{
+    border-bottom-right-radius: 100%;
+}
+
+.maze_row {
+    height: 25px;
+}
+
+.maze_row div{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0px;
 }
 
 .drag_and_drop_zone {
@@ -229,6 +302,27 @@ table, th, td {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.ghost_spawn {
+    background-image: url(../images/pacman/ghost.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+
+    /* 
+        background-color: #000;
+        background-image: url(../images/pacman/pacman.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 25px;
+    */
+}
+/*
+.ghost_spawn.ghost_cage {
+    background-color: black;
+}*/
 
 .login_button {
     background-color: lightblue;
@@ -296,7 +390,7 @@ table, th, td {
     background-color: black;
 }
 
- .pokemon {
+.pokemon {
     height: 225px;
     width: 300px;
 }
