@@ -4937,7 +4937,7 @@ function isSkippingTurn(move, opponent) {
         }
         else if (pokemonStatus == "paralyzed") {
             if (hasChance(25)) {
-                log("p", pokemon.getAttribute("name") + " is paralyzed!");
+                log("p", pokemon.getAttribute("name") + " can't move because it is paralyzed!");
 
                 return true;
             }
@@ -4954,7 +4954,7 @@ function isSkippingTurn(move, opponent) {
                 return false;
             }
             else {
-                log("p", pokemon.getAttribute("name") + " is sleeping!");
+                log("p", pokemon.getAttribute("name") + " can't move because it is sleeping!");
 
                 pokemon.setAttribute("sleeping-turns-left", pokemonSleepingTurnsLeft - 1);
 
