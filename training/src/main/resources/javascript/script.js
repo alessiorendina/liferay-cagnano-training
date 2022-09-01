@@ -447,8 +447,8 @@ function selectMemoryCard(element) {
         let attributes1 = openMemoryCards[0].getAttributeNames();
         let attributes2 = openMemoryCards[1].getAttributeNames();
 
-        var filteredAttributes1 = attributes1.filter(function(e) { return e !== "open" && e !== "class" && e !== "src"})
-        var filteredAttributes2 = attributes2.filter(function(e) { return e !== "open" && e !== "class" && e !== "src"})
+        var filteredAttributes1 = attributes1.filter(function(e) {return e !== "open" && e !== "class" && e !== "src"});
+        var filteredAttributes2 = attributes2.filter(function(e) {return e !== "open" && e !== "class" && e !== "src"});
 
         if (((filteredAttributes1.length > 0) && (filteredAttributes2.length > 0)) &&
                 (filteredAttributes1[0] == filteredAttributes2[0])) {
@@ -477,7 +477,7 @@ function selectMemoryCard(element) {
 }
 
 function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
+    let currentIndex = array.length, randomIndex;
 
     while (currentIndex != 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
