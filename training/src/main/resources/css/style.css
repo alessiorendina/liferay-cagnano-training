@@ -20,12 +20,97 @@ table, th, td {
     text-align: center;
 }
 
+#blinky{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    visibility: hidden;
+}
+
+#clyde{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    visibility: hidden;
+}
+
+#gameStatusMessage{
+    background-size: cover;
+    background-color: black;
+    background-position: center;
+    color: yellow;
+    width: 100px;
+    height: 15px;
+    display: none;
+    position: absolute;
+    top: 280px;
+    left: 193px;
+}
+
+#inky{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    visibility: hidden;
+}
+
 #myPokemonsContainer > .pokemon_row {
     padding-bottom: 150px;
 }
 
+#pacman{
+    background-image: url(../images/pacman/pacman.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    visibility: hidden;
+}
+
+#pinky{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    visibility: hidden;
+}
+
 #pokemonPlayButton[firstClick] {
     margin-top: 140px;
+}
+
+#pacmanRecord{
+    display:inline-block;
+    margin-top: 0;
+    margin-left: 30px;
+}
+
+#scoreboard{
+    border: 1px solid white;
+    background-color: black;
+    width: 95%;
+    height: 5%;
+    padding: 7px;
+    color: yellow;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
 }
 
 .answered {
@@ -137,6 +222,19 @@ table, th, td {
     justify-content: center;
 }
 
+.coin {
+    background-color: #000;
+    background-image: url(../images/pacman/coin.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5px;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 30px;
+}
+
 .date_button {
     border: none;
     color: white;
@@ -175,6 +273,10 @@ table, th, td {
     margin-top: 4%;
     position: fixed;
     left: 41%;
+}
+
+.empty {
+    background-color: black;
 }
 
 .drag_and_drop_zone {
@@ -270,6 +372,37 @@ table, th, td {
     margin-left: 25%;
 }
 
+.maze_brick{
+    background-color: blue;
+}
+
+.maze_left_top{
+    border-top-left-radius: 100%;
+}
+
+.maze_left_bottom{
+    border-bottom-left-radius: 100%;
+}
+
+.maze_right_top{
+    border-top-right-radius: 100%;
+}
+
+.maze_right_bottom{
+    border-bottom-right-radius: 100%;
+}
+
+.maze_row {
+    height: 25px;
+}
+
+.maze_row div{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0px;
+}
+
 .moveset {
     bottom: -80%;
     left: 9%;
@@ -301,7 +434,46 @@ table, th, td {
     background-color: black;
 }
 
- .pokemon {
+.pacman_button {
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    position: relative;
+    font-size: 35px;
+    margin-top: 5%;
+    left: 45%;
+    box-shadow: 4px 4px #000;
+    border-radius: 10px;
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.pacman_button:active {
+    box-shadow: 0 0 #000;
+    transform: translateY(3px);
+}
+
+.pacman_button:hover {
+    background-color: #66ccff;
+}
+
+.pacman_button:disabled {
+    visibility: hidden;
+}
+
+.pacman_board_text{
+    width: 200px;
+    margin-left: 30px;
+    flex: auto;
+}
+
+.pacman_container{
+    position: fixed;
+    margin-top: 175px;
+    margin-left: 575px;
+}
+
+.pokemon {
     height: 225px;
     width: 300px;
 }
