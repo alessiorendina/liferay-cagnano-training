@@ -2,6 +2,14 @@ const moves = [
     {
         "accuracy": 100,
         "category": "physical",
+        "id": 0,
+        "name": "Struggle",
+        "power": 50,
+        "type": "normal"
+    },
+    {
+        "accuracy": 100,
+        "category": "physical",
         "id": 1,
         "name": "Attack Order",
         "power": 90,
@@ -4324,6 +4332,60 @@ function cleanUp() {
     turn = 0;
 }
 
+function checkActivePokemonMovePPs() {
+    let myActivePokemonPPMove1 = myActivePokemon.getAttribute("pp-move-1");
+    let myActivePokemonPPMove2 = myActivePokemon.getAttribute("pp-move-2");
+    let myActivePokemonPPMove3 = myActivePokemon.getAttribute("pp-move-3");
+    let myActivePokemonPPMove4 = myActivePokemon.getAttribute("pp-move-4");
+
+    if ((parseInt(myActivePokemonPPMove1, 10) == 0) &&
+        (parseInt(myActivePokemonPPMove2, 10) == 0) &&
+        (parseInt(myActivePokemonPPMove3, 10) == 0) &&
+        (parseInt(myActivePokemonPPMove4, 10) == 0)) {
+
+        myActivePokemon.setAttribute("move-1", "Struggle");
+        myActivePokemon.setAttribute("pp-move-1", "100");
+
+        myActivePokemon.setAttribute("move-2", "Struggle");
+        myActivePokemon.setAttribute("pp-move-2", "100");
+
+        myActivePokemon.setAttribute("move-3", "Struggle");
+        myActivePokemon.setAttribute("pp-move-3", "100");
+
+        myActivePokemon.setAttribute("move-4", "Struggle");
+        myActivePokemon.setAttribute("pp-move-4", "100");
+
+        let allMovesetMoveButtons = document.querySelectorAll(".moveset > .move_button");
+
+        for (let i = 0; i < allMovesetMoveButtons.length; i++) {
+            allMovesetMoveButtons[i].removeAttribute("disabled");
+        }
+    }
+
+    let opponentActivePokemonPPMove1 = opponentActivePokemon.getAttribute("pp-move-1");
+    let opponentActivePokemonPPMove2 = opponentActivePokemon.getAttribute("pp-move-2");
+    let opponentActivePokemonPPMove3 = opponentActivePokemon.getAttribute("pp-move-3");
+    let opponentActivePokemonPPMove4 = opponentActivePokemon.getAttribute("pp-move-4");
+
+    if ((parseInt(opponentActivePokemonPPMove1, 10) == 0) &&
+        (parseInt(opponentActivePokemonPPMove2, 10) == 0) &&
+        (parseInt(opponentActivePokemonPPMove3, 10) == 0) &&
+        (parseInt(opponentActivePokemonPPMove4, 10) == 0)) {
+
+        opponentActivePokemon.setAttribute("move-1", "Struggle");
+        opponentActivePokemon.setAttribute("pp-move-1", "100");
+
+        opponentActivePokemon.setAttribute("move-2", "Struggle");
+        opponentActivePokemon.setAttribute("pp-move-2", "100");
+
+        opponentActivePokemon.setAttribute("move-3", "Struggle");
+        opponentActivePokemon.setAttribute("pp-move-3", "100");
+
+        opponentActivePokemon.setAttribute("move-4", "Struggle");
+        opponentActivePokemon.setAttribute("pp-move-4", "100");
+    }
+}
+
 function checkMyBenchedPokemons() {
     let benchedPokemonsCount = 0;
 
@@ -4500,7 +4562,11 @@ function damageCalculation(first, attackingPokemon, defendingPokemon, move) {
         defenseValue = 1;
     }
 
-    let effectiveness = getEffectiveness(move.type, defendingPokemon.getAttribute("type"));
+    let effectiveness = 1;
+
+    if (move.name == "Struggle") {
+        effectiveness = getEffectiveness(move.type, defendingPokemon.getAttribute("type"));
+    }
 
     if (effectiveness == 0) {
         log("p", defendingPokemon.getAttribute("name") + " is immune!");
@@ -4517,83 +4583,111 @@ function damageCalculation(first, attackingPokemon, defendingPokemon, move) {
 
     let damage = Math.ceil((move.power * (attackValue/defenseValue)) * (3/2) * effectiveness);
 
-    let defendingPokemonActualHP = defendingPokemon.getAttribute("hp-actual");
+    if (move.name == "Struggle") {
+        let attackingPokemonActualHP = attackingPokemon.getAttribute("hp-actual");
 
-    defendingPokemonActualHP = defendingPokemonActualHP - damage;
+        attackingPokemonActualHP = attackingPokemonActualHP - damage;
 
-    if (parseInt(defendingPokemonActualHP, 10) < 0) {
-        defendingPokemonActualHP = 0;
-    }
-
-    defendingPokemon.setAttribute("hp-actual", defendingPokemonActualHP);
-
-    let defendingPokemonHP = defendingPokemon.getAttribute("hp");
-
-    let hpPercentage = Math.ceil(100 * (defendingPokemonActualHP/defendingPokemonHP));
-
-    let defendingPokemonProgressBar = defendingPokemon.querySelector(".progress-bar");
-
-    let defendingPokemonProgressBarValueNow = defendingPokemonProgressBar.getAttribute("aria-valuenow");
-
-    defendingPokemonProgressBar.classList.remove("w-" + defendingPokemonProgressBarValueNow);
-    defendingPokemonProgressBar.classList.add("w-" + hpPercentage);
-
-    defendingPokemonProgressBar.setAttribute("aria-valuenow", hpPercentage);
-
-    checkPokemonFaint(defendingPokemon);
-
-    if (!isPokemonFainted(defendingPokemon) && move.effect) {
-        let effectType = move.effect.type;
-
-        if ((effectType == "lower") || (effectType == "raise")) {
-            let stats = move.effect.stats;
-
-            if (move.effect.target == "opponent") {
-                for (let i = 0; i < stats.length; i++) {
-                    if (hasChance(move.effect.chance)) {
-                        applyStatEffect(defendingPokemon, stats[i], effectType);
-                    }
-                }
-            }
-            else if (move.effect.target == "self") {
-                for (let i = 0; i < stats.length; i++) {
-                    if (hasChance(move.effect.chance)) {
-                        applyStatEffect(attackingPokemon, stats[i], effectType);
-                    }
-                }
-            }
+        if (parseInt(attackingPokemonActualHP, 10) < 0) {
+            attackingPokemonActualHP = 0;
         }
-        else if (effectType == "status") {
-            if ((move.effect.status == "flinch")) {
-                if (first && hasChance(move.effect.chance)) {
-                    defendingPokemon.setAttribute("flinch", "");
+
+        attackingPokemon.setAttribute("hp-actual", attackingPokemonActualHP);
+
+        let attackingPokemonHP = attackingPokemon.getAttribute("hp");
+
+        let hpPercentage = Math.ceil(100 * (attackingPokemonActualHP/attackingPokemonHP));
+
+        let attackingPokemonProgressBar = attackingPokemon.querySelector(".progress-bar");
+
+        let attackingPokemonProgressBarValueNow = attackingPokemonProgressBar.getAttribute("aria-valuenow");
+
+        attackingPokemonProgressBar.classList.remove("w-" + attackingPokemonProgressBarValueNow);
+        attackingPokemonProgressBar.classList.add("w-" + hpPercentage);
+
+        attackingPokemonProgressBar.setAttribute("aria-valuenow", hpPercentage);
+
+        checkPokemonFaint(attackingPokemon);
+    }
+    else {
+        let defendingPokemonActualHP = defendingPokemon.getAttribute("hp-actual");
+
+        defendingPokemonActualHP = defendingPokemonActualHP - damage;
+
+        if (parseInt(defendingPokemonActualHP, 10) < 0) {
+            defendingPokemonActualHP = 0;
+        }
+
+        defendingPokemon.setAttribute("hp-actual", defendingPokemonActualHP);
+
+        let defendingPokemonHP = defendingPokemon.getAttribute("hp");
+
+        let hpPercentage = Math.ceil(100 * (defendingPokemonActualHP/defendingPokemonHP));
+
+        let defendingPokemonProgressBar = defendingPokemon.querySelector(".progress-bar");
+
+        let defendingPokemonProgressBarValueNow = defendingPokemonProgressBar.getAttribute("aria-valuenow");
+
+        defendingPokemonProgressBar.classList.remove("w-" + defendingPokemonProgressBarValueNow);
+        defendingPokemonProgressBar.classList.add("w-" + hpPercentage);
+
+        defendingPokemonProgressBar.setAttribute("aria-valuenow", hpPercentage);
+
+        checkPokemonFaint(defendingPokemon);
+
+        if (!isPokemonFainted(defendingPokemon) && move.effect) {
+            let effectType = move.effect.type;
+
+            if ((effectType == "lower") || (effectType == "raise")) {
+                let stats = move.effect.stats;
+
+                if (move.effect.target == "opponent") {
+                    for (let i = 0; i < stats.length; i++) {
+                        if (hasChance(move.effect.chance)) {
+                            applyStatEffect(defendingPokemon, stats[i], effectType);
+                        }
+                    }
+                }
+                else if (move.effect.target == "self") {
+                    for (let i = 0; i < stats.length; i++) {
+                        if (hasChance(move.effect.chance)) {
+                            applyStatEffect(attackingPokemon, stats[i], effectType);
+                        }
+                    }
                 }
             }
-            else if (!defendingPokemon.hasAttribute("status") && hasChance(move.effect.chance)) {
-                let status = move.effect.status;
-
-                defendingPokemon.setAttribute("status", status);
-
-                let statusTurnsLeftProperty = null;
-
-                if (status == "burned") {
-                    defendingPokemon.setAttribute("att-actual", "" + Math.ceil(defendingPokemon.getAttribute("att-actual") / 2));
+            else if (effectType == "status") {
+                if ((move.effect.status == "flinch")) {
+                    if (first && hasChance(move.effect.chance)) {
+                        defendingPokemon.setAttribute("flinch", "");
+                    }
                 }
-                else if (status == "confused") {
-                    statusTurnsLeftProperty = "confused-turns-left";
-                }
-                else if (status == "paralyzed") {
-                    defendingPokemon.setAttribute("spe-actual", "" + Math.ceil(defendingPokemon.getAttribute("spe-actual") / 2));
-                }
-                else if (status == "sleeping") {
-                    statusTurnsLeftProperty = "sleeping-turns-left";
-                }
+                else if (!defendingPokemon.hasAttribute("status") && hasChance(move.effect.chance)) {
+                    let status = move.effect.status;
 
-                if (statusTurnsLeftProperty) {
-                    defendingPokemon.setAttribute(statusTurnsLeftProperty, "" + Math.floor(Math.random() * 4));
-                }
+                    defendingPokemon.setAttribute("status", status);
 
-                log("p", defendingPokemon.getAttribute("name") + " is " + status);
+                    let statusTurnsLeftProperty = null;
+
+                    if (status == "burned") {
+                        defendingPokemon.setAttribute("att-actual", "" + Math.ceil(defendingPokemon.getAttribute("att-actual") / 2));
+                    }
+                    else if (status == "confused") {
+                        statusTurnsLeftProperty = "confused-turns-left";
+                    }
+                    else if (status == "paralyzed") {
+                        defendingPokemon.setAttribute("spe-actual", "" + Math.ceil(defendingPokemon.getAttribute("spe-actual") / 2));
+                    }
+                    else if (status == "sleeping") {
+                        statusTurnsLeftProperty = "sleeping-turns-left";
+                    }
+
+                    if (statusTurnsLeftProperty) {
+                        defendingPokemon.setAttribute(statusTurnsLeftProperty, "" + Math.floor(Math.random() * 4));
+                    }
+
+                    log("p", defendingPokemon.getAttribute("name") + " is " + status);
+                }
             }
         }
     }
@@ -4612,7 +4706,7 @@ function executeMove(first, moveName, opponent, type) {
 
                     opponentActivePokemon.removeAttribute("flinch");
                 }
-                else {
+                else if (first || !isPokemonFainted(myActivePokemon)) {
                     log("p", "Opponent has selected: " + move.name);
             
                     damageCalculation(first, opponentActivePokemon, myActivePokemon, move);
@@ -4626,7 +4720,7 @@ function executeMove(first, moveName, opponent, type) {
 
                     myActivePokemon.removeAttribute("flinch");
                 }
-                else {
+                else if (first || !isPokemonFainted(opponentActivePokemon)) {
                     log("p", "You have selected: " + move.name);
             
                     damageCalculation(first, myActivePokemon, opponentActivePokemon, move);
@@ -4666,14 +4760,18 @@ function executeOpponentMove(first) {
 
     let opponentRandomMovePP = 0;
 
-    while((moveNumber !== 0) || (opponentRandomMovePP == 0)) {
+    while((moveNumber != 0) || (opponentRandomMovePP == 0)) {
         opponentRandomMovePP = opponentActivePokemon.getAttribute("pp-move-" + moveNumber);
 
         if (parseInt(opponentRandomMovePP, 10) > 0) {
             break;
         }
 
-        moveNumbers.splice(moveNumber, 1);
+        let index = moveNumbers.indexOf(moveNumber);
+
+        if (index > -1) {
+            moveNumbers.splice(index, 1);
+        }
 
         if (moveNumbers.length > 0) {
             moveNumber = moveNumbers[Math.floor(Math.random() * moveNumbers.length)];
@@ -4711,6 +4809,12 @@ function getEffectiveness(moveType, pokemonType) {
 }
 
 function getMove(moveName, type) {
+    if (moveName == "Struggle") {
+        initializeMoves("normal");
+    
+        return filteredMoves.filter(function(e) {return e.name == moveName})[0];
+    }
+
     initializeMoves(type);
 
     return filteredMoves.filter(function(e) {return e.name == moveName})[0];
@@ -5021,6 +5125,8 @@ function makeMove(element) {
             executeMove(false, moveName, false, myActivePokemon.getAttribute("type"));
         }
     }
+
+    checkActivePokemonMovePPs();
 }
 
 function opponentRandomSwitch() {
