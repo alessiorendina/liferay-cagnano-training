@@ -13,19 +13,4 @@ jobs:
       - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pr-message: "**Core Skills**
-
-**Excellence**
-Producing excellence starts with paying attention to details, in your personal efforts as well as the team as a whole. This track measures your ability to produce high-quality outcomes in your daily work consistently.
-
-**Collaboration**
-Collaboration is more than just working with others. It's about sharing skills, methods, and perspectives with colleagues. It requires effective listening and thoughtfully receiving feedback from others. Cultivate trust and build a shared understanding to solve problems together.
-
-**Impact**
-Combining initiative with accountability — impact is seeing opportunities and taking effective action to achieve positive results that contribute to the long-term success of the organization.
-
-**Advocacy**
-The passionate education and coordination of people/principles/practices throughout an organization, using various levers and switches (social, political, economic, technological, etc.) while respecting people’s needs and organizational goals.
-
-**Influence**
-Leadership skills are required to guide individuals, teams, or an entire organization to reach a shared goal. As the company grows and the number of people and teams increases, it’s important that some individuals assume additional responsibilities serving people and teams effectively."
+          pr-message: "**Core Skills**\n\n**Excellence**\nProducing excellence starts with paying attention to details, in your personal efforts as well as the team as a whole. This track measures your ability to produce high-quality outcomes in your daily work consistently.\n\n**Collaboration**\nCollaboration is more than just working with others. It's about sharing skills, methods, and perspectives with colleagues. It requires effective listening and thoughtfully receiving feedback from others. Cultivate trust and build a shared understanding to solve problems together.\n\n**Impact**\nCombining initiative with accountability — impact is seeing opportunities and taking effective action to achieve positive results that contribute to the long-term success of the organization.\n\n**Advocacy**\nThe passionate education and coordination of people/principles/practices throughout an organization, using various levers and switches (social, political, economic, technological, etc.) while respecting people’s needs and organizational goals.\n\n**Influence**\nLeadership skills are required to guide individuals, teams, or an entire organization to reach a shared goal. As the company grows and the number of people and teams increases, it’s important that some individuals assume additional responsibilities serving people and teams effectively."
