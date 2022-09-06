@@ -4564,7 +4564,7 @@ function damageCalculation(first, attackingPokemon, defendingPokemon, move) {
 
     let effectiveness = 1;
 
-    if (move.name == "Struggle") {
+    if (move.name != "Struggle") {
         effectiveness = getEffectiveness(move.type, defendingPokemon.getAttribute("type"));
     }
 
