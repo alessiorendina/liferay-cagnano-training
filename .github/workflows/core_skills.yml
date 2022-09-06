@@ -1,4 +1,4 @@
-name: CS
+name: Core Skills
 
 on:
   pull_request_review:
