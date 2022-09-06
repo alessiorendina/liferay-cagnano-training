@@ -1,0 +1,14 @@
+name: Merge
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  merged:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-message: "Merged, thanks!"
