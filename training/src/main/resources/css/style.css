@@ -132,14 +132,9 @@ table, th, td {
     cursor: pointer;
 }
 
-.center {
+.centered_image {
     display: flex;
     justify-content: center;
-}
-
-.container {
-    border-radius: 5px;
-    padding: 30px;
 }
 
 .date_button {
@@ -217,12 +212,22 @@ table, th, td {
 }
 
 .gallery > a {
+    position: relative;
     scroll-snap-align: start;
 }
 
 .gallery img {
     width: 250px;
     height: 160px;
+}
+
+.gallery_img_description {
+    color: white;
+    background-color:black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .login_button {
@@ -234,6 +239,11 @@ table, th, td {
     border-radius: 4px;
     cursor: pointer;
     margin-left: 59%;
+}
+
+.login_form {
+    border-radius: 5px;
+    padding: 30px;
 }
 
 .login_label {
@@ -269,7 +279,7 @@ table, th, td {
     float: left;
     background-color: #0080ff;
     font-size: 15px;
- }
+}
  
 .nav_link {
     display: inline-block;
@@ -280,11 +290,11 @@ table, th, td {
     text-align: center;
     line-height: 55px;
     text-decoration: none;
- }
+}
 
 .nav_link:hover {
     background-color: black;
- }
+}
 
  .pokemon {
     height: 225px;
