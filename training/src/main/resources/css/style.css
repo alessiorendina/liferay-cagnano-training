@@ -230,6 +230,16 @@ table, th, td {
     transform: translate(-50%, -50%);
 }
 
+.h1_blog {
+    background-color: white;
+    text-shadow: 2px 2px 5px red;
+}
+
+.h3_blog {
+    background-color: white;
+    height: 100px;
+}
+
 .login_button {
     background-color: lightblue;
     color: white;
