@@ -4455,6 +4455,18 @@ function checkPokemonFaint(pokemon) {
 }
 
 function damageCalculation(first, attackingPokemon, defendingPokemon, move) {
+    let effectiveness = 1;
+
+    if (move.name != "Struggle") {
+        effectiveness = getEffectiveness(move.type, defendingPokemon.getAttribute("type"));
+    }
+
+    if (effectiveness == 0) {
+        log("p", defendingPokemon.getAttribute("name") + " is immune!");
+
+        return;
+    }
+
     if ((move.category == "status")) {
         let effect = move.effect;
 
@@ -4561,17 +4573,8 @@ function damageCalculation(first, attackingPokemon, defendingPokemon, move) {
     if (parseInt(defenseValue, 10) < 1) {
         defenseValue = 1;
     }
-
-    let effectiveness = 1;
-
-    if (move.name != "Struggle") {
-        effectiveness = getEffectiveness(move.type, defendingPokemon.getAttribute("type"));
-    }
-
-    if (effectiveness == 0) {
-        log("p", defendingPokemon.getAttribute("name") + " is immune!");
-    }
-    else if (effectiveness == 0.5) {
+    
+    if (effectiveness == 0.5) {
         log("p", "It is not very effective.");
     }
     else if (effectiveness == 1) {
