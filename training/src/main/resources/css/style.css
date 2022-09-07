@@ -33,6 +33,17 @@ table, th, td {
     -webkit-text-stroke: thin;
 }
 
+.blog_post_card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.blog_post_list {
+    position: fixed;
+    background: white; 
+}
+
 .button_wrapper {
     margin-top: 100px;
     position: relative;
