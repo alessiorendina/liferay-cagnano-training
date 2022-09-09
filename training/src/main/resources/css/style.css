@@ -246,14 +246,7 @@ table, th, td {
     padding: 30px;
 }
 
-.login_label {
-    margin-top: 2%;
-    margin-left: 25%;
-    padding: 10px 5px 5px 0;
-    display: block;
-}
-
-.login_textarea {
+.login_input {
     width: 40%;
     padding: 7px;
     margin-left: 25%;
@@ -261,8 +254,20 @@ table, th, td {
     border-radius: 4px;
 }
 
-.login_textarea:invalid {
+.login_input:invalid {
     color: red;
+}
+
+.login_label {
+    margin-top: 2%;
+    margin-left: 25%;
+    padding: 10px 5px 5px 0;
+    display: block;
+}
+
+.login_radio_button {
+    margin-top: 1%;
+    margin-left: 25%;
 }
 
 .moveset {

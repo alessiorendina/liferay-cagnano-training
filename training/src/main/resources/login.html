@@ -32,18 +32,38 @@
         </nav>
         
         <form class="login_form">
-            <label for="name" class="login_label"><b>Insert name:</b></label>
+            <label for="userName" class="login_label"><b>Insert username:</b></label>
+
+            <input type="text" placeholder="Enter username" id="userName" required class="login_input" minlength="2" maxlength="25"/>
+
+            <label for="firstName" class="login_label"><b>Insert first name:</b></label>
+
+            <input type="text" placeholder="Enter first name" id="firstName" required class="login_input" minlength="2" maxlength="25"/>
+
+            <label for="lastName" class="login_label"><b>Insert last name:</b></label>
             
-            <input type="text" placeholder="Enter name" id="name" required class="login_textarea" minlength="2"/>
+            <input type="text" placeholder="Enter last name" id="lastName" required class="login_input" minlength="2" maxlength="25"/>
+
+            <label for="birthday" class="login_label"><b>Insert birthday:</b></label>
+
+            <input type="date" id="birthday" name="birthday" class="login_input">
             
             <label for="email" class="login_label"><b>Insert email:</b></label>
             
-            <input type="email" placeholder="Enter Email" id="email" required class="login_textarea"/>
+            <input type="email" placeholder="Enter Email" id="email" required class="login_input"/>
             
             <label for="password" class="login_label"><b>Insert password:</b></label>
             
-            <input type="password" placeholder="Enter password" id="password" required class="login_textarea" minlength="6"/>
-            
+            <input type="password" placeholder="Enter password" id="password" required class="login_input" minlength="6"/>
+        
+            <label for="gender" class="login_label"><b>Select gender:</b></label>
+
+        <div  class="login_radio_button">
+            <input type="radio" name="gender" value="male">Male
+
+            <input type="radio" name="gender" value="female">Female
+        </div>
+
             <input type="submit" onclick="checkFormData()" class="login_button"/>
         </form>
     </body>

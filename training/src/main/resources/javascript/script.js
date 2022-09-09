@@ -63,11 +63,19 @@ $(document).ready(function() {
 
 function checkFormData() {
     let email = document.getElementById("email");
-    let name = document.getElementById("name");
+    let firstname = document.getElementById("firstName");
+    let lastname = document.getElementById("lastName");
     let password = document.getElementById("password");
+    let username = document.getElementById("userName");
 
-    if (!name.validity.valid) {
-        alert("Invalid name");
+    if (!username.validity.valid){
+        alert("Invalid username");
+    }
+    else if (!firstname.validity.valid){
+        alert("Invalid first name");
+    }
+    else if (!lastname.validity.valid){
+        alert("Invalid  last name");
     }
     else if (!email.validity.valid){
         alert("Email is not valid type");
