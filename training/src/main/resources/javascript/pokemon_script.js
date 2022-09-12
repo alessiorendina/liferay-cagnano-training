@@ -5,7 +5,7 @@ const moves = [
         "id": 0,
         "name": "Struggle",
         "power": 50,
-        "type": "normal"
+        "type": "struggle"
     },
     {
         "accuracy": 100,
@@ -4813,7 +4813,7 @@ function getEffectiveness(moveType, pokemonType) {
 
 function getMove(moveName, type) {
     if (moveName == "Struggle") {
-        initializeMoves("normal");
+        initializeMoves("struggle");
     
         return filteredMoves.filter(function(e) {return e.name == moveName})[0];
     }
