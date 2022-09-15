@@ -5151,6 +5151,22 @@ function opponentRandomSwitch() {
     }
 }
 
+function resetPokemonStats(pokemon) {
+    let pokemonAtt = pokemon.getAttribute("att");
+    let pokemonDef = pokemon.getAttribute("def");
+    let pokemonSpa = pokemon.getAttribute("spa");
+    let pokemonSpd = pokemon.getAttribute("spd");
+    let pokemonSpe = pokemon.getAttribute("spe");
+
+    pokemon.setAttribute("att-actual", parseInt(pokemonAtt, 10));
+    pokemon.setAttribute("def-actual", parseInt(pokemonDef, 10));
+    pokemon.setAttribute("spa-actual", parseInt(pokemonSpa, 10));
+    pokemon.setAttribute("spd-actual", parseInt(pokemonSpd, 10));
+    pokemon.setAttribute("spe-actual", parseInt(pokemonSpe, 10));
+
+    applyStatIcons(pokemon);
+}
+
 function resolveEndTurnEffects() {
     if (!isPokemonFainted(myActivePokemon) && myActivePokemon.hasAttribute("status")) {
         let myActivePokemonActualHP = myActivePokemon.getAttribute("hp-actual");
@@ -5213,12 +5229,12 @@ function resolveEndTurnEffects() {
     }
 }
 
-function selectPokemon(element) {
-    if (element.hasAttribute("active") || !element.hasAttribute("selectable")) {
+function selectPokemon(pokemon) {
+    if (pokemon.hasAttribute("active") || !pokemon.hasAttribute("selectable")) {
         return;
     }
 
-    let activePokemon = element.parentElement.querySelector(".pokemon_card[active]");
+    let activePokemon = pokemon.parentElement.querySelector(".pokemon_card[active]");
 
     if (activePokemon) {
         activePokemon.removeAttribute("active");
@@ -5228,9 +5244,13 @@ function selectPokemon(element) {
         for (let i = 0; i < movesetButtons.length; i++) {
             movesetButtons[i].setAttribute("disabled", "");
         }
+
+        if (!isPokemonFainted(activePokemon)) {
+            resetPokemonStats(activePokemon);
+        }
     }
 
-    myActivePokemon = element;
+    myActivePokemon = pokemon;
 
     myActivePokemon.setAttribute("active", "");
 
