@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Liferay-Cagnano Calculator</title>
+        
+        <script type="text/javascript" src="javascript/calc_script.js"></script> 
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    
+    <body>
+        <nav class="nav">
+            <a href="login.html" class="nav_link">Login</a>
+
+            <a href="index.html" class="nav_link">Home</a>
+
+            <a href="blogs/blog_post_1.html" class="nav_link">Blog Post 1</a>
+
+            <a href="blogs/blog_post_2.html" class="nav_link">Blog Post 2</a>
+
+            <a href="blogs/blog_post_3.html" class="nav_link">Blog Post 3</a>
+
+            <a href="guess_who.html" class="nav_link">Guess who?</a>
+
+            <a href="memory.html" class="nav_link">Memory</a>
+
+            <a href="date.html" class="nav_link">What time is it?</a>
+
+            <a href="drag_drop.html" class="nav_link">Drag and drop</a>
+
+            <a href="pokemon.html" class="nav_link">Pokemon</a>
+        </nav>
+
+        <form>
+            <label for="num1"><b>num1:</b></label>
+
+            <input type="number" id="num1" required class="calculator_input"/>
+
+            <label for="num2"><b>num2:</b></label>
+
+            <input type="number" id="num2" required class="calculator_input"/>
+
+            <select id="operator">
+
+            <option value="addiction">addiction</option>
+
+            <option value="subtraction">subtraction</option>
+
+            <option value="moltiplication">moltiplication</option>
+
+            <option value="division">division</option>
+
+            <select>     
+            <button type="button" id="calculate" onclick="checkFormCalculator()">calculate</button>
+
+            <label for="result"><b>result:</b></label>
+
+            <input type="text" id="result" readonly class="calculator_input"/>
+        </form>
+    </body>
+</html>
+
+

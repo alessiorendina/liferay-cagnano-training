@@ -59,6 +59,13 @@ table, th, td {
     transform: translate(-50%, -48%);
 }
 
+.calculator_input {
+    width: 10%;
+    padding: 7px;
+    margin-top: 10%;
+    border-radius: 4px;   
+}
+
 .card {
     border: none;
     background-color: transparent;
