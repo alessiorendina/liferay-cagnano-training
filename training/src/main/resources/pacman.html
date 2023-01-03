@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Liferay Cagnano Pacman</title>
+        
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+        <script>
+            window.onload = function() {
+              const element = document.createElement("script");
+              element.src = "javascript/pacman_script.js";
+              document.body.appendChild(element);
+            };
+        </script> 
+
+        <link rel="stylesheet" href="css/style.css">
+
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    </head>
+    <body>
+        <nav class="nav">
+            <a href="login.html" class="nav_link">Login</a>
+
+            <a href="index.html" class="nav_link">Home</a>
+
+            <a href="blogs/blog_post_1.html" class="nav_link">Blog Post</a>
+
+            <a href="guess_who.html" class="nav_link">Guess who?</a>
+
+            <a href="memory.html" class="nav_link">Memory</a>
+
+            <a href="drag_drop.html" class="nav_link">Drag and drop</a>
+
+            <a href="pokemon.html" class="nav_link">Pokemon</a>
+        </nav>
+
+        <div class="pacman_container" id="pacman_container">
+            <div id="maze" tabindex="0"></div>
+            
+            <div id="pacman"></div>
+    
+            <div id="blinky"></div>
+
+            <div id="inky"></div>
+
+            <div id="pinky"></div>
+
+            <div id="clyde"></div>
+        
+            <div id="scoreboard">
+                Score: <div class="pacman_board_text"><p>0</p></div>
+                <div class="pacman_board_text">Record: <p id="pacmanRecord">0</p> </div>
+            </div>
+            <div id="gameStatusMessage"></div> 
+        </div>
+        <button onclick="startGame()" id="pacman_button" class="pacman_button">Play</button>
+        
+    </body>
+</html>
