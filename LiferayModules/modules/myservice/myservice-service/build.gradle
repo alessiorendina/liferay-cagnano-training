@@ -1,0 +1,15 @@
+dependencies {
+    compileOnly group: "com.liferay.portal", name: "release.portal.api", version: "7.4.3.67-ga67"
+    compileOnly project(":modules:myservice:myservice-api")
+}
+
+buildService {
+    apiDir = "../myservice-api/src/main/java"
+
+    group = "com.liferay.exercise"
+
+    liferay {
+        liferayHome = "../../../../../LiferayPortal/bundles"
+        deployDir = file("${liferayHome}/osgi/modules")
+    }
+}
