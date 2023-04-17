@@ -1,0 +1,33 @@
+body{
+  font-family:arial, helvetica, sans-serif;
+}
+
+div.info {
+  font-size: 25px;
+  color: white;
+  text-align: center;  
+}
+
+p {
+font-size: 22px;
+}
+
+table {
+  margin:auto;
+  border-collapse: collapse;
+}
+
+td {
+  background-color :grey;
+  width:80px;
+  height:80px;
+  border: 8px solid rgb(96, 95, 95);
+  font-size:40px;
+  text-align:center;
+}
+button.btn-newgame{
+  padding: 12px;
+  margin-bottom:20px;
+  background-color: rgb(202, 192, 192);
+  
+}
