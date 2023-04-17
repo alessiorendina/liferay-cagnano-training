@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2048</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/2048.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  </head>
+
+  <body>
+    <p>This is a simple HTML page</p>
+
+    <nav class="nav">
+
+      <a href="index.html" class="nav_link">Home</a>
+
+      <a href="login.html" class="nav_link">Login</a>
+
+      <a href="blogs/blog_post_1.html" class="nav_link">Blog Post 1</a>
+
+      <a href="blogs/blog_post_2.html" class="nav_link">Blog Post 2</a>
+
+      <a href="blogs/blog_post_3.html" class="nav_link">Blog Post 3</a>
+
+      <a href="guess_who.html" class="nav_link">Guess who?</a>
+
+      <a href="memory.html" class="nav_link">Memory</a>
+
+      <a href="date.html" class="nav_link">What time is it?</a>
+
+      <a href="drag_drop.html" class="nav_link">Drag and drop</a>
+
+      <a href="pokemon.html" class="nav_link">Pokemon</a>
+
+      <a href="2048.html" class="nav_link">2048</a>
+
+  </nav>
+  
+    <div class="info">
+      <h1>2048</h1>
+      <p id="text"></p>
+
+      <div class="score-container">
+        <div class="score-title">score</div>
+        <p id="score">0</p>
+        <button class="btn-newgame" onclick="resetGame()">New Game</button>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <td id="cell00" ></td>
+        <td id="cell01" ></td>
+        <td id="cell02" ></td>
+        <td id="cell03" ></td>
+      </tr>
+      <tr>
+        <td id="cell10" ></td>
+        <td id="cell11" ></td>
+        <td id="cell12" ></td>
+        <td id="cell13" ></td>
+      </tr>
+      <tr>
+        <td id="cell20" ></td>
+        <td id="cell21" ></td>
+        <td id="cell22" ></td>
+        <td id="cell23" ></td>
+      </tr>
+      <tr>
+        <td id="cell30" ></td>
+        <td id="cell31" ></td>
+        <td id="cell32" ></td>
+        <td id="cell33" ></td>
+      </tr>
+    </table>
+    <script src="javascript/2048.js"></script>
+  </body>
+</html>
