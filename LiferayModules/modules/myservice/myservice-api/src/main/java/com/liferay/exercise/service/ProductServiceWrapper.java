@@ -52,6 +52,11 @@ public class ProductServiceWrapper
 		return _productService.deleteProduct(productId);
 	}
 
+	@Override
+	public java.util.List<com.liferay.exercise.model.Product> getAllProducts() {
+		return _productService.getAllProducts();
+	}
+
 	/**
 	 * Returns the OSGi service identifier.
 	 *

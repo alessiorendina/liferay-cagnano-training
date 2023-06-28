@@ -221,6 +221,10 @@ public class ProductLocalServiceUtil {
 		return getService().getActionableDynamicQuery();
 	}
 
+	public static List<Product> getAllProducts() {
+		return getService().getAllProducts();
+	}
+
 	public static
 		com.liferay.portal.kernel.dao.orm.IndexableActionableDynamicQuery
 			getIndexableActionableDynamicQuery() {

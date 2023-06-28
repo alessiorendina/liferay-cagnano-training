@@ -17,6 +17,8 @@ package com.liferay.exercise.service;
 import com.liferay.exercise.model.Product;
 import com.liferay.portal.kernel.exception.PortalException;
 
+import java.util.List;
+
 /**
  * Provides the remote service utility for Product. This utility wraps
  * <code>com.liferay.exercise.service.impl.ProductServiceImpl</code> and is an
@@ -48,6 +50,10 @@ public class ProductServiceUtil {
 
 	public static Product deleteProduct(long productId) throws PortalException {
 		return getService().deleteProduct(productId);
+	}
+
+	public static List<Product> getAllProducts() {
+		return getService().getAllProducts();
 	}
 
 	/**

@@ -215,6 +215,38 @@ public class ProductServiceHttp {
 		}
 	}
 
+	public static java.util.List<com.liferay.exercise.model.Product>
+		getAllProducts(HttpPrincipal httpPrincipal) {
+
+		try {
+			MethodKey methodKey = new MethodKey(
+				ProductServiceUtil.class, "getAllProducts",
+				_getAllProductsParameterTypes4);
+
+			MethodHandler methodHandler = new MethodHandler(methodKey);
+
+			Object returnObj = null;
+
+			try {
+				returnObj = TunnelUtil.invoke(httpPrincipal, methodHandler);
+			}
+			catch (Exception exception) {
+				throw new com.liferay.portal.kernel.exception.SystemException(
+					exception);
+			}
+
+			return (java.util.List<com.liferay.exercise.model.Product>)
+				returnObj;
+		}
+		catch (com.liferay.portal.kernel.exception.SystemException
+					systemException) {
+
+			_log.error(systemException, systemException);
+
+			throw systemException;
+		}
+	}
+
 	private static Log _log = LogFactoryUtil.getLog(ProductServiceHttp.class);
 
 	private static final Class<?>[] _addProductParameterTypes0 = new Class[] {
@@ -231,5 +263,7 @@ public class ProductServiceHttp {
 		};
 	private static final Class<?>[] _deleteProductParameterTypes3 =
 		new Class[] {long.class};
+	private static final Class<?>[] _getAllProductsParameterTypes4 =
+		new Class[] {};
 
 }
