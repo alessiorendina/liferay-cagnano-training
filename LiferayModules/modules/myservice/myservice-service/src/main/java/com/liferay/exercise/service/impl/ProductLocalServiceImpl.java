@@ -23,6 +23,7 @@ import com.liferay.portal.kernel.service.ServiceContext;
 import org.osgi.service.component.annotations.Component;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Brian Wing Shun Chan
@@ -82,5 +83,9 @@ public class ProductLocalServiceImpl extends ProductLocalServiceBaseImpl {
 		Product product = productPersistence.findByPrimaryKey(productId);
 
 		return productPersistence.remove(product);
+	}
+
+	public List<Product> getAllProducts(){
+		return productPersistence.findAll();
 	}
 }

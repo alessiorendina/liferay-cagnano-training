@@ -23,6 +23,8 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.service.ServiceContext;
 import org.osgi.service.component.annotations.Component;
 
+import java.util.List;
+
 /**
  * @author Brian Wing Shun Chan
  */
@@ -53,5 +55,9 @@ public class ProductServiceImpl extends ProductServiceBaseImpl {
 
 	public Product deleteProduct(long productId) throws PortalException {
 		return productLocalService.deleteProduct(productId);
+	}
+
+	public List<Product> getAllProducts() {
+		return productLocalService.getAllProducts();
 	}
 }

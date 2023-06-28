@@ -242,6 +242,11 @@ public class ProductLocalServiceWrapper
 	}
 
 	@Override
+	public java.util.List<com.liferay.exercise.model.Product> getAllProducts() {
+		return _productLocalService.getAllProducts();
+	}
+
+	@Override
 	public com.liferay.portal.kernel.dao.orm.IndexableActionableDynamicQuery
 		getIndexableActionableDynamicQuery() {
 
