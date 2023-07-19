@@ -1,0 +1,10 @@
+Bundle-Name: myservice-api
+Bundle-SymbolicName: com.liferay.exercise.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.liferay.exercise.exception,\
+	com.liferay.exercise.model,\
+	com.liferay.exercise.service,\
+	com.liferay.exercise.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../myservice-service/service.xml
