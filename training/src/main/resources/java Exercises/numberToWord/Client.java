@@ -10,17 +10,17 @@ public class Client {
         System.out.println(
                 "Choose a language between English and Italian");
 
-        while (true)
-            switch (scanner.nextLine()) {
-                case "Italian":
-                    System.out.println(ConvItalian.italian());
-                    break;
-                case "English":
-                    System.out.println(ConvEng.english());
-                default:
-                    System.out.println(
-                            "Choose a language between English and Italian");
-                    scanner.hasNextLine();
+        while (true) {
+            String nextLine = scanner.nextLine();
+
+            if (nextLine.equals("Italian")) {
+                ConvItalian.run();
+            }
+            else if (nextLine.equals("English")) {
+                ConvEng.run();
+            }
+
+            System.out.println("Choose a language between English and Italian");
         }
     }
 }

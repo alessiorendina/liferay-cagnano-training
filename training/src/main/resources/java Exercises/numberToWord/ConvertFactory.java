@@ -3,10 +3,10 @@ public class ConvertFactory {
 
         MultiLang multiLang = null;
 
-        if (lang == "Italian") {
+        if (lang.equals("Italian")) {
             multiLang = new ConvItalian();
         }
-        if (lang == "English") {
+        if (lang.equals("English")) {
             multiLang = new ConvEng();
         }
         return multiLang;

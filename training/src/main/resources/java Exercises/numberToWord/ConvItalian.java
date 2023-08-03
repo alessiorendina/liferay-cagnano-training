@@ -3,24 +3,33 @@ import java.util.Scanner;
 public class ConvItalian implements MultiLang {
 
     @Override
-    public String italian() {
+    public void run() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Premi q per uscire");
 
-        while (true) {
-            try {
-                System.out.println("Inserisci un numero");
-                System.out.println(convertNumberToWords(scanner.nextLong()));
-            } catch (Exception wrongValue) {
+        String exit = null;
+
+        try {
+            System.out.println("Inserisci un numero");
+            System.out.println(convertNumberToWords(scanner.nextLong()));
+        } catch (Exception wrongValue) {
+            exit = scanner.nextLine();
+            
+            if (!exit.equals("q")) {
                 System.out.println("Inserisci un numero valido");
             }
-            String exit = scanner.nextLine();
-            if (exit.equals("q")) {
-                break;
-            }
         }
-        return "Ciao";
+
+        if (exit == null) {
+            exit = scanner.nextLine();
+        }
+
+        if (!exit.equals("q")) {            
+            run();
+        }
+
+        return;
     }
 
 
@@ -105,11 +114,6 @@ public class ConvItalian implements MultiLang {
         return (s == null || s.length() == 0)
                 ? null
                 : (s.substring(0, s.length() - 1));
-    }
-
-    @Override
-    public String english() {
-        return null;
     }
 
 }
